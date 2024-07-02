@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "1040ed7b-7fa8-490b-83fc-3a3425e2b73f",
+		"_postman_id": "f7040e77-46a6-4533-ac53-81d922b5e8c9",
 		"name": "BookMyShow",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "27526715",
-		"_collection_link": "https://universal-escape-615614.postman.co/workspace/S2S-BACKEND~92365fe1-a8ee-452c-a378-27d53a35d11c/collection/27526715-1040ed7b-7fa8-490b-83fc-3a3425e2b73f?action=share&source=collection_link&creator=27526715"
+		"_exporter_id": "27095524"
 	},
 	"item": [
 		{
@@ -129,6 +128,118 @@
 			]
 		},
 		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Create Event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"title\": \"Deadpool 3\",\r\n    \"description\": \"blah blah blah blah\",\r\n    \"venue\": \"6628f74077a8cdb26ed2e585\",\r\n    \"timings\": [\"2024-05-28T15:05:48.919Z\", \"2024-05-29T15:05:48.919Z\", \"2024-05-30T15:05:48.919Z\"],\r\n    \"price\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/event/createEvent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event",
+								"createEvent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/event/getAllEvents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event",
+								"getAllEvents"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Crreate Booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user\": \"6628e6aaf30b60fb2b026d12\",\r\n  \"event\": \"6629228aa8da55581288817c\",\r\n  \"seats\": [\"A1\", \"A2\", \"B1\"],\r\n  \"bookingTime\": \"2024-03-15T18:30:00Z\",\r\n  \"status\": \"confirmed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/booking/createBooking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"booking",
+								"createBooking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllBookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/booking/getAllBookings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"booking",
+								"getAllBookings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Check API",
 			"request": {
 				"method": "GET",
@@ -142,108 +253,6 @@
 					"port": "3000",
 					"path": [
 						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create Event",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n     \"title\": \"Deadpool 3\",\r\n    \"description\": \"blah blah blah blah\",\r\n    \"venue\": \"6628f74077a8cdb26ed2e585\",\r\n    \"timings\": [\"2024-05-28T15:05:48.919Z\", \"2024-05-29T15:05:48.919Z\", \"2024-05-30T15:05:48.919Z\"],\r\n    \"price\": 500\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/event/createEvent",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"event",
-						"createEvent"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get All Events",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/event/getAllEvents",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"event",
-						"getAllEvents"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Crreate Booking",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"user\": \"6628e6aaf30b60fb2b026d12\",\r\n  \"event\": \"6629228aa8da55581288817c\",\r\n  \"seats\": [\"A1\", \"A2\", \"B1\"],\r\n  \"bookingTime\": \"2024-03-15T18:30:00Z\",\r\n  \"status\": \"confirmed\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/booking/createBooking",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"booking",
-						"createBooking"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "getAllBookings",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/booking/getAllBookings",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"booking",
-						"getAllBookings"
 					]
 				}
 			},
